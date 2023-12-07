@@ -1,0 +1,99 @@
+/* Добавляем шрифты */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;700&family=Unbounded&display=swap");
+
+/* Базовые настройки */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --index: calc(1vw + 1vh);
+}
+
+body {
+  height: 90vh;
+  background-color: #000000;
+  font-family: "Unbounded", sans-serif;
+}
+
+/* Игра: Найди пару */
+.match_game {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5em;
+  color: #ffffff;
+}
+
+/* Заголовок */
+.match_game > h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 576px) {
+  .match_game > h1 {
+    font-size: 25px;
+  }
+}
+
+.game {
+  display: grid;
+  /* Задаем количество колонок */
+  grid-template-columns: repeat(4, 1fr);
+  /* Указываем отступ между карточками */
+  gap: 20px;
+  padding: 4px 15px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Настройки карточек */
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  padding: 30px;
+  background-color: rgb(255, 255, 255);
+  font-size: 0;
+  color: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Открытие карточек */
+.open {
+  font-size: 36px;
+  color: white;
+  background-color: rgb(130, 162, 231);
+  cursor: default;
+}
+
+/* Задаем настройки для карточек, которые совпали */
+.success {
+  font-size: 36px;
+  color: white;
+  background-color: #4be650be;
+  cursor: default;
+}
+
+.success:active {
+  background-color: #4be650be;
+}
+
+/* Настраиваем под ширину экрана */
+@media screen and (max-width: 576px) {
+  .game {
+    width: 100%;
+  }
+  .card {
+    height: 100px;
+  }
+}
